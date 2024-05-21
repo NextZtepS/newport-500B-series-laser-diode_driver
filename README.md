@@ -1,4 +1,4 @@
-# Newport Model 300-500B Series Laser Diode Driver USB Package (for Linux)
+# Newport Model 300-500B Series Laser Diode Driver Python USB Package (for Linux)
 
 
 ## Pre-requisites
@@ -76,5 +76,5 @@ model_535B.enable_laser_output()  # enable laser output
 
 ## Troubleshooting
 
-To check if the device is recognized by the PC, run `lsusb` to list all USB devices connected to your PC. If the Newport device 
+To check if the device is recognized by the PC, run `usb-devices` to list all USB devices connected to your PC. If the Newport device 
 is not found, try connecting the USB cable from the device to your PC first and then restart the device.

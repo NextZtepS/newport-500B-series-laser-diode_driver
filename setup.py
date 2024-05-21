@@ -7,7 +7,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name='newport_laser_diode_driver',
-    version='1.0.2',
+    version='1.0.4',
     license="MIT",
     packages=find_packages(),
     install_requires=[
