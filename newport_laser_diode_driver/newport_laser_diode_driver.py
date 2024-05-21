@@ -12,7 +12,7 @@ class NewportLaserDiodeDriver:
 
     def __init__(self, idVendor=0x104d, idProduct=0x1001):
         """
-        A constructor for the NewportLaserDriver class.
+        A constructor for the NewportLaserDiodeDriver class.
 
         Args:
             idVendor (hexadecimal, optional): Vendor Id of the device. Defaults to 0x104d.
