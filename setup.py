@@ -6,8 +6,8 @@ this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text()
 
 setup(
-    name='newport_model_500B_laser_driver',
-    version='1.0.0',
+    name='newport_laser_diode_driver',
+    version='1.0.2',
     license="MIT",
     packages=find_packages(),
     install_requires=[

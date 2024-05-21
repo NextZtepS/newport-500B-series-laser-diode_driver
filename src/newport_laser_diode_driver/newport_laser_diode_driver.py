@@ -2,7 +2,7 @@ import usb.core
 import usb.util
 
 
-class NewportLaserDriver:
+class NewportLaserDiodeDriver:
 
     # Device Manual (USB interface is explained on Section 5 pg. 33)
     # https://www.newport.com/medias/sys_master/images/images/hbf/h21/8797013508126/500B-LDD-Users-Manual.pdf
