@@ -10,6 +10,173 @@ class NewportLaserDiodeDriver:
     # Data Member
     _dev: usb.core.Device
 
+    @property
+    def identifier(self) -> str:
+        """
+        Get the identification string of the device.
+
+        Returns:
+            str: identification string
+        """
+        return self.get_identification()
+    
+    @property
+    def key_switch_status(self) -> int:
+        """
+        Get the status of the key switch.
+
+        Returns:
+            int: 0 for OFF, 1 for ON
+        """
+        return self.get_key_switch_status()
+    
+    @property
+    def hardware_temp(self) -> float:
+        """
+        Get the hardware temperature.
+
+        Returns:
+            float: temperature in Celsius
+        """
+        return self.get_hardware_temp()
+    
+    @property
+    def current_set_point(self) -> float:
+        """
+        Get the current set point setting.
+
+        Returns:
+            float: current set point in mA
+        """
+        return self.get_current_set_point()
+    
+    @current_set_point.setter
+    def current_set_point(self, current: float):
+        """
+        Set the current set point.
+
+        Args:
+            current (float): current set point in mA
+        """
+        self.set_current_set_point(current)
+
+    @property
+    def photodiode_current_set_point(self) -> float:
+        """
+        Get the photodiode current set point setting.
+
+        Returns:
+            float: photodiode current set point in mA
+        """
+        return self.get_photodiode_current_set_point()
+    
+    @photodiode_current_set_point.setter
+    def photodiode_current_set_point(self, current: float):
+        """
+        Set the photodiode current set point.
+
+        Args:
+            current (float): photodiode current set point in mA
+        """
+        self.set_photodiode_current_set_point(current)
+
+    @property
+    def measured_current(self) -> float:
+        """
+        Get the measured current.
+
+        Returns:
+            float: measured current in mA
+        """
+        return self.get_measured_current()
+    
+    @property
+    def current_limit(self) -> float:
+        """
+        Get the current limit setting.
+
+        Returns:
+            float: current limit in mA
+        """
+        return self.get_current_limit()
+    
+    @current_limit.setter
+    def current_limit(self, current: float):
+        """
+        Set the current limit.
+
+        Args:
+            current (float): current limit in mA
+        """
+        self.set_current_limit(current)
+
+    @property
+    def laser_mode(self) -> str:
+        """
+        Get current laser mode.
+
+        Returns:
+            str: "Ilbw" constant current mode, low bandwidth; "Ihbw" constant current mode, high bandwidth; "Mdi" constant power mode
+        """
+        return self.get_laser_mode()
+    
+    @property
+    def bandwidth_switch(self) -> int:
+        """
+        Get bandwidth switch setting.
+
+        Returns:
+            int: 0 for Low, 1 for High
+        """
+        return self.get_bandwidth_switch()
+    
+    @property
+    def laser_output_enable(self) -> int:
+        """
+        Get current laser output enable status.
+
+        Returns:
+            int: 0 for OFF, 1 for ON
+        """
+        return self.get_laser_output_enable()
+    
+    @laser_output_enable.setter
+    def laser_output_enable(self, enable: int):
+        """
+        Enable or disable laser output.
+
+        Args:
+            enable (int): 0 for OFF, 1 for ON
+        """
+        if enable:
+            self.enable_laser_output()
+        else:
+            self.disable_laser_output()
+
+    @property
+    def laser_range(self) -> int:
+        """
+        Get current laser range setting.
+
+        Returns:
+            int: 0 for Low, 1 for High
+        """
+        return self.get_laser_range()
+    
+    @laser_range.setter
+    def laser_range(self, rng: int):
+        """
+        Set laser range.
+
+        Args:
+            rng (int): 0 for Low, 1 for High
+        """
+        if rng:
+            self.set_laser_range_high()
+        else:
+            self.set_laser_range_low()
+    
+
     def __init__(self, idVendor=0x104d, idProduct=0x1001):
         """
         A constructor for the NewportLaserDiodeDriver class.

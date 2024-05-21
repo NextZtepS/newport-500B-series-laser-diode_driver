@@ -1,4 +1,4 @@
-from ..newport_laser_diode_driver import NewportLaserDiodeDriver
+from ..src import NewportLaserDiodeDriver
 
 model_535b = NewportLaserDiodeDriver(idVendor=0x104d, idProduct=0x1001)
 model_535b.clear_buffer()
@@ -9,7 +9,7 @@ def test_identity():
     assert model_535b.get_identification().__contains__("NEWPORT")
 
 
-#? Getting error message leads to timeout error
+#? Getting error message always leads to timeout error
 # def test_no_error():
 #     assert model_535B.get_error() == ("0", "No error")
 

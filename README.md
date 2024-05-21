@@ -1,11 +1,11 @@
 # Newport Model 300-500B Series Laser Diode Driver Python USB Package (for Linux)
 
+This package is developed within the advisory of the Gallicchio Research Group, Harvey Mudd College.
 
 ## Pre-requisites
 
 - Permission to connect to the Newport Laser Diode Driver USB device
 - Python version >= 3
-- pyusb library
 
 
 ## Set-up
@@ -41,15 +41,6 @@ sudo udevadm control --reload ;
 sudo udevadm trigger ;
 ```
 
-### Prepare Python and dependencies
-
-In your desired Python environment, run the following shell command:
-
-```shell
-pip install pyusb  # should be already installed by default
-```
-
-
 ## Usage
 
 In your desired Python environment, run the following shell command:
@@ -65,8 +56,7 @@ from newport_laser_diode_driver import NewportLaserDiodeDriver
 
 model_535B = NewportLaserDiodeDriver(idVendor=0x104d, idProduct=0x1001)
 
-identifier = model_535B.get_identification()  # obtain the identification
-print(identifier)
+print(model_535B.identifier)  # obtain the identification string of the device
 
 model_535B.set_current_set_point(10.0)  # set current set point to be 10.0 mA
 current = model_535B.get_current_set_point()  # get the current set point
