@@ -18,8 +18,7 @@ Run the Run the following shell command:
 usb-devices  # this allows us to see the idVendor and idProduct of all USB devices 
 ```
 
-Ensure that the idVendor and idProduct match the example below unless change the idVendor and idProduct to the appropriate values. 
-The process below grants permission for our package to manage the specified Newport USB device.
+Ensure that the idVendor and idProduct match the example below unless change the idVendor and idProduct to the appropriate values. The process below grants permission for our package to manage the specified Newport USB device.
 
 Run the following shell command:
 
@@ -69,10 +68,8 @@ model_535B.enable_laser_output()  # enable laser output
 
 ## Compatibility and Testing
 
-I have tested this package with the Newport Model 500B Series devices that I have accessed including 505B and 535B. On paper,
-this package should work with Model 300B Series as well; however, I have no access to the devices to test them out.
+I have tested this package with the Newport Model 500B Series devices that I have accessed including 505B and 535B. On paper, this package should work with Model 300B Series as well; however, I have no access to the devices to test them out.
 
 ## Troubleshooting
 
-To check if the device is recognized by the PC, run `usb-devices` to list all USB devices connected to your PC. If the Newport 
-device is not found, try connecting the USB cable from the device to your PC first and then restart the Newport device.
+To check if the device is recognized by the PC, run `usb-devices` to list all USB devices connected to your PC. If the Newport device is not found, try connecting the USB cable from the device to your PC first and then restart the Newport device.
