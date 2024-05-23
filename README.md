@@ -10,7 +10,7 @@ This package is developed within the advisory of the Gallicchio Research Group, 
 
 ## Set-up
 
-### Allow the Newport Laser Diode Driver USB device to be managed by Python [ref](https://stackoverflow.com/questions/31992058/how-can-i-comunicate-with-this-device-using-pyusb/31994168#31994168)
+### Allow the Newport Laser Diode Driver USB device to be managed by Python
 
 Run the Run the following shell command:
 
@@ -18,25 +18,28 @@ Run the Run the following shell command:
 usb-devices  # this allows us to see the idVendor and idProduct of all USB devices 
 ```
 
-Ensure that the idVendor and idProduct match the example below unless change the idVendor and idProduct to the appropriate values.
-
+Ensure that the idVendor and idProduct match the example below unless change the idVendor and idProduct to the appropriate values. 
+The process below grants permission for our package to manage the specified Newport USB device.
 
 Run the following shell command:
 
 ```shell
-cd /lib/udev/rules.d/ ;
-sudo touch 50-Newport_Laser_Diode_Driver.rules ;
-sudo vim 50-Newport_Laser_Diode_Driver.rules ;
+cd /etc/udev/rules.d/ ;
+sudo touch 99-usb-permissions.rules ;
+sudo vim 99-usb-permissions.rules ;  # you can use other text editor of your choosing
 ```
 
-Copy & paste the following line into the file: `ACTION=="add", SUBSYSTEMS=="usb", ATTRS{idVendor}=="104d", ATTRS{idProduct}=="1001", MODE="660", GROUP="plugdev"`
+Copy & paste the following line into the file: 
+```
+# Newport Model 300-500B Series Laser Diode Driver
+ACTION=="add", SUBSYSTEMS=="usb", ATTRS{idVendor}=="104d", ATTRS{idProduct}=="1001", MODE="0666"
+```
 
-Then, type `:wq` and press `ENTER` to save the changes
+Then, type `:wq` and press `ENTER` to save the changes and close the file
 
 Run the following shell command:
 
 ```shell
-sudo adduser USERNAME plugdev ;  # don't forget to change the USERNAME
 sudo udevadm control --reload ;
 sudo udevadm trigger ;
 ```
@@ -64,7 +67,12 @@ print(current)  # 10.0
 model_535B.enable_laser_output()  # enable laser output
 ```
 
+## Compatibility and Testing
+
+I have tested this package with the Newport Model 500B Series devices that I have accessed including 505B and 535B. On paper,
+this package should work with Model 300B Series as well; however, I have no access to the devices to test them out.
+
 ## Troubleshooting
 
-To check if the device is recognized by the PC, run `usb-devices` to list all USB devices connected to your PC. If the Newport device 
-is not found, try connecting the USB cable from the device to your PC first and then restart the device.
+To check if the device is recognized by the PC, run `usb-devices` to list all USB devices connected to your PC. If the Newport 
+device is not found, try connecting the USB cable from the device to your PC first and then restart the Newport device.

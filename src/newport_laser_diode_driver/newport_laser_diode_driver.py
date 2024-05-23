@@ -193,7 +193,7 @@ class NewportLaserDiodeDriver:
             raise ValueError('Device not found')
         else:
             print(f"Connected to {self._dev.manufacturer} {self._dev.product}")
-            self._dev.set_configuration()
+            # self._dev.set_configuration()  # This is not necessary for this device and will lead to timeout error
 
     def send_helper(self, cmd_str: str):
         """
