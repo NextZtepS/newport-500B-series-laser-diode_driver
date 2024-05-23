@@ -1,5 +1,6 @@
 # Newport Model 300-500B Series Laser Diode Driver Python USB Package (for Linux)
 
+
 This package is developed within the advisory of the Gallicchio Research Group, Harvey Mudd College.
 
 ## Pre-requisites
@@ -43,6 +44,7 @@ sudo udevadm control --reload ;
 sudo udevadm trigger ;
 ```
 
+
 ## Usage
 
 In your desired Python environment, run the following shell command:
@@ -66,9 +68,11 @@ print(current)  # 10.0
 model_535B.enable_laser_output()  # enable laser output
 ```
 
+
 ## Compatibility and Testing
 
 I have tested this package with the Newport Model 500B Series devices that I have accessed including 505B and 535B. On paper, this package should work with Model 300B Series as well; however, I have no access to the devices to test them out.
+
 
 ## Troubleshooting
 
