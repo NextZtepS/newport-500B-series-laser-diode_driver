@@ -8,7 +8,7 @@ long_description = (this_directory / "README.md").read_text()
 setup(
     name="newport_laser_diode_driver",
     description="Python library for interfacing with Newport Model 300-500B Series Laser Diode Driver",
-    version="1.0.5",
+    version="1.1.0",
     author="NextZtepS",
     author_email="natdanaiongarjvaja@gmail.com",
     package_dir={"": "src"},
