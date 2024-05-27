@@ -25,11 +25,11 @@ Run the following shell command:
 
 ```shell
 cd /etc/udev/rules.d/ ;
-sudo touch 99-usb-permissions.rules ;
 sudo vim 99-usb-permissions.rules ;  # you can use other text editor of your choosing
 ```
 
-Copy & paste the following line into the file: 
+Copy & paste the following lines into the file: 
+
 ```
 # Newport Model 300-500B Series Laser Diode Driver
 ACTION=="add", SUBSYSTEMS=="usb", ATTRS{idVendor}=="104d", ATTRS{idProduct}=="1001", MODE="0666"
