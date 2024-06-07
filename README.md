@@ -3,6 +3,16 @@
 
 This package is developed within the advisory of the Gallicchio Research Group, Harvey Mudd College.
 
+## Table of Contents
+
+- [Table of Contents](#table-of-contents)
+- [Pre-requisites](#pre-requisites)
+- [Set-up](#set-up)
+  - [Allow the Newport Laser Diode Driver USB device to be managed by Python](#allow-the-newport-laser-diode-driver-usb-device-to-be-managed-by-python)
+- [Usage](#usage)
+- [Compatibility and Testing](#compatibility-and-testing)
+- [Troubleshooting](#troubleshooting)
+
 ## Pre-requisites
 
 - Permission to connect to the Newport Laser Diode Driver USB device
