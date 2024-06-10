@@ -34,8 +34,7 @@ Ensure that the idVendor and idProduct match the example below unless change the
 Run the following shell command:
 
 ```shell
-cd /etc/udev/rules.d/ ;
-sudo vim 99-usb-permissions.rules ;  # you can use other text editor of your choosing
+sudo vim /etc/udev/rules.d/newports.rules  # you can use other text editor of your choosing
 ```
 
 Copy & paste the following lines into the file: 
